@@ -10,4 +10,8 @@ All of the assignments and work related Boot Camp is posted here.
 	all the issues and stuff that interests the Employees especially newly hired Employees.
 ##Command Line Shortcuts
 	This file contains basic shortcuts of termianl and their result with example.
+##task_file.cpp
+	HackerRanker task code
+##HakerRanker.png
+	Picture of passing the hakerranker test cases for my problem.
 
