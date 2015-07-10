@@ -1,0 +1,68 @@
+As per the requirements of I chose two team leads from the names zaki emailed me. Following is the detailed report of the meeting.
+
+Team Lead : Tayyab Khalid (Mobile/Android)
+ 
+Projects:
+	1. NAUTIC TRANSLATE 
+
+		->Description
+
+		The NAUTIC Translate app offers you a consolidated dictionary for nautical terms. Translations are available in German, French, 		Italian, Spanish, Turkish, Danish, Portuguese, Dutch and Greek for more than 1.800 nautical terms of different categories.
+		-> App Features
+
+			->Dictionary
+
+				As mentioned in the description the app tanslates the nautical terms in 10 languages.
+			->Cash Box
+
+				This feature controls the travelling expenses and other budgeting issues while people go out for sail.
+				This was the most challenging feature of the app because there were alot of mathematical calculations for the 					proper expenses division between the team of sailors going out to sail.
+			->Knot Boat
+
+				This feature inludes the tutorial about binding different rope knots that a sailor must know of.
+			->Outlet Stores
+
+				This app has a feature that shows the location of comapany's stores all over the region.
+			->Online Offers
+				All the offers that are proposed on the website and the company's outlet are shown in the app using this feature.
+
+			->Feedback
+
+				Users can submit their feedback about any functionality of the app or the information that is being shown in the 					app.
+		->Technology 
+
+			Technology used was Android.
+		->Tools 
+
+			Tools used were 
+				->Eclipse
+				->Android Studio
+		->Challenges
+
+			The main challenge that Tayyab and his team faced were the ambigious requirements. Client was not able to outline his 				requirements in the proper way so it took developers some time to get on proper track.
+
+	2.BAUHAUS TOOLBOX
+		Description:
+	
+			The BAUHAUS Toolbox offers a variety of different tools that make every DIY heart beat faster. 
+			Besides tools such as torch,unit converter and tape measure, the BAUHAUS Toolbox offers many other useful 				services. Whether videos , assembly instructions , or the way to the next BAUHAUS Centre , with the Toolbox are at all 				times well prepared to move ahead quickly with your home improvement project . Browse the virtual BAUHAUS toolbox and 				maybe " not the right Werkezug at hand " soon heard the case of the past.
+		Some of the main features are as follows:
+	
+		Features:
+			Torch:
+				Turns on the cell phone's flash light to help the worker work in the dark.
+			Unit Converter:
+				Allows the user to convert values according to the given unit.
+			
+
+		Technology:
+
+			Andoird
+		Tools:
+
+			Eclipse
+			Android Studio		
+
+
+
+
