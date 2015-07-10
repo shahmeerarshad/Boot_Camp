@@ -14,4 +14,6 @@ All of the assignments and work related Boot Camp is posted here.
 	HackerRanker task code of printing the value of every node of a linked list.
 ##HakerRanker.png
 	Picture of passing the HakerRanker test cases for my problem.
+##Task_file.png
+	Screenshot of submission board.
 
