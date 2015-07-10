@@ -62,6 +62,11 @@ Following is the detailed report of my understanding of the meeting.
 
     ->As main company is in Berlin,Germany so all the money flows from their to the Lahore development center.
     ->At the end of month Lahore office sends the invoices to the german office and they pay back the with the required amounts.
+->Top Clients:
+     -> Meta Design
+     -> E-Comme
+     -> House Pilot
+     
 
 ->Competition:
 
