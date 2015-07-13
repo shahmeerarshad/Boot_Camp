@@ -82,3 +82,10 @@ source $HOME/.aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+function addfiles()
+{
+git add $1
+git commit -m "$2"
+git push origin master
+}
+
