@@ -88,4 +88,14 @@ git add $1
 git commit -m "$2"
 git push origin master
 }
-
+function findfiles()
+{
+  dir= 'localhost:8080/';
+  for filename in vagrant/sites/*;
+  do
+    echo  $(basename  $filename)
+    done;
+ #   echo $(basename /foo/bar/stuff)
+  
+  
+  }
