@@ -1,0 +1,89 @@
+Activity: 
+Follow the link given in presentation and use the terminal Shortcut keys to perform tasks.
+Note:
+$git clone https://github.com/shahmeerarshad/Boot_Camp.git
+
+Shortcut keys operations that change or alter the commands will be applied on the above Command.
+
+1.Up Down Arrow Keys
+
+	-> By using Up Down keys we can switch between perviously used commands.
+	-> Second to last command came you on terminal when I pressed the Up key twice.
+
+2.Crtl+Left
+
+	-> Using this shortcut can help us jump between arguments/words in terminal towrads the left.
+
+3.Crtl+Right
+
+	-> Using this shortcut can help us jump between arguments/words in terminal towrads the right.
+
+4.Home 
+	-> This moves the cursor to the start of the line.
+
+5.End
+	-> This moves the cursor to the end of the line.
+
+6.Crtl+U
+	->Deleted the whole command by pressing these keys.
+
+7.Crtl+K
+
+	->Deleted the command from the position of the cursor till the end of line.
+	 $git clone https://github.com/shahmeerarshad/Boot_Camp.git
+	->After pressing this shortcut when cursor was at ':' this was the result
+	 $git clone https
+8.Crtl+W
+
+	-> This shortcut deleted the word that came before the cursor.
+	$git clone https://github.com/shahmeerarshad/Boot_Camp.git
+	->After pressing this shortcut when cursor was at ':' this was the result
+	 git clone ://github.com/shahmeerarshad/Boot_Camp.git
+
+9.Crtl+R
+
+	->Lets you search the commands.
+10.Tab
+
+	->Auto Completes the command.
+11.cd ..
+
+	->Moves the user one directory up.
+
+12.cd ../Direcotry Name
+
+	->Helps the user to move directly from one directory from another directory even those directories are not direclty related.
+13.cd -
+
+	->Moves to last working directory.
+
+14.!!
+	->This represents the last command that ran on terminal.
+
+15.!
+	->This searches the command that used the word written after '!'.
+
+16.cd !$
+
+	->This executes different command but with same parameter.
+
+17.^WrongWord^RightWord 
+
+	-> This changes the wrong spelled word in the previous command.
+	-> Instead of writing the whole command again we could just use this shortcut to change the wrong spelled letter with the right word.
+
+18.History
+
+	->Shows all the commands history.
+
+19. History | grep 'word'
+
+        -> This filters the history reuslt with the given word.
+20. {}
+
+	-> Reduces the effort of changing the file name or part of file name.
+	   mv/documents/me.txt.{txt.rc}
+	-> Also helps in creating multiple folder/directories at a time.
+	   mkdir shahmeer{1,2,3}
+
+

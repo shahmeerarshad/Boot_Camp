@@ -1,0 +1,137 @@
+				Meeting with Team Leads
+			Submitted to : Mr Zaki Shaheen and Mr.Qasim Zeeshan
+				Date : 10-july-2015
+
+As per the requirements of I chose two team leads from the names zaki emailed me. Following is the detailed report of the meeting.
+
+Team Lead : Tayyab Khalid (Mobile/Android)
+ 
+Projects:
+	1. NAUTIC TRANSLATE 
+
+		->Description
+
+		The NAUTIC Translate app offers you a consolidated dictionary for nautical terms. Translations are available in German, French, 		Italian, Spanish, Turkish, Danish, Portuguese, Dutch and Greek for more than 1.800 nautical terms of different categories.
+		-> App Features
+
+			->Dictionary
+
+				As mentioned in the description the app tanslates the nautical terms in 10 languages.
+			->Cash Box
+
+				This feature controls the travelling expenses and other budgeting issues while people go out for sail.
+				This was the most challenging feature of the app because there were alot of mathematical calculations for the 					proper expenses division between the team of sailors going out to sail.
+			->Knot Boat
+
+				This feature inludes the tutorial about binding different rope knots that a sailor must know of.
+			->Outlet Stores
+
+				This app has a feature that shows the location of comapany's stores all over the region.
+			->Online Offers
+				All the offers that are proposed on the website and the company's outlet are shown in the app using this feature.
+
+			->Feedback
+
+				Users can submit their feedback about any functionality of the app or the information that is being shown in the 					app.
+		->Technology 
+
+			Technology used was Android.
+		->Tools 
+
+			Tools used were 
+				->Eclipse
+				->Android Studio
+		->Challenges
+
+			The main challenge that Tayyab and his team faced were the ambigious requirements. Client was not able to outline his 				requirements in the proper way so it took developers some time to get on proper track.
+
+	2.BAUHAUS TOOLBOX:
+
+		->Description:
+	
+			The BAUHAUS Toolbox offers a variety of different tools that make every DIY heart beat faster. 
+			Besides tools such as torch,unit converter and tape measure, the BAUHAUS Toolbox offers many other useful 				services. Whether videos , assembly instructions , or the way to the next BAUHAUS Centre , with the Toolbox are at all 				times well prepared to move ahead quickly with your home improvement project . Browse the virtual BAUHAUS toolbox and 				maybe " not the right Werkezug at hand " soon heard the case of the past.
+
+
+		->Some of the main features of this app are as follows:
+
+			->Torch:
+				Turns on the cell phone's flash light to help the worker work in the dark.
+			->Unit Converter:
+				Allows the user to convert values according to the given unit.
+			->Videos:
+				Tutorial videos regarding tools and their uses.
+			->Maps:
+				Bauhaus stores information.
+
+			Measuring Scale(challenging): 
+				This was same as the real measuring scale with same calibrations that one would find on 				the a real scale. And this scale changed it size according to the size of the device without changing the 					calibrations.
+
+		->Technology:
+
+			->Andoird
+		->Tools:
+
+			->Eclipse
+			->Android Studio	
+
+
+Team Lead : Imran Munawar Khan	
+
+Projects:
+	->FAIR INSTANCE:
+
+		Fair Instance helps you to pave the way for an out of court settlement and with just a few clicks to find a language accepted by 			all sides, impartial mediator in your area.
+		
+		Features:
+
+			Although there were a lot of features but the lead pointed out only those which gave them challenging time.
+
+		->Mediator Selection:
+
+			This feature was the most difficult and tricky task for the developers.For this feature the client explicity gave the 				developers a algorithm that included some mathematical calculations for rating and choosing appropriate mediator.
+
+		->Timeline of the Case:
+
+			This timline included all the updates,statuses and news regarding the ongoing cases. Every case had its own timeline.
+	
+
+
+	->PARTICIPATE:
+
+		This was a NGO based product.People were able to post their projects on the website to gather funding for that website.The 			website had two types of login 1.Project Managers 2.Normal.
+
+		-> The person registering with project manager account was able to post projects that required help and funding.
+		-> The person registering with normal account was able to fund and help the proposed project.
+
+		Features:
+			->Complete Profile building of the Project Managers and normal users.
+			->Timeline facility for the project managers and their projects separately.
+	->HOUSE PILOT:		
+		This is a online real estate website with people posting their propeties online for others to buy or rentout. 
+
+		It has four types of registration 
+
+			1. Admin:
+				Watches over the whole website,approves the ads puton by the users.
+			2.Property Owner:
+				Actual property owner that uploads his/her property on the website.
+			3.Tenants:
+				People looking for the properties online.
+			4.House Pilot:
+				Middle man who gets the commision if the deal between tenants and the property owner is closed.
+
+		Features:
+			This was a big project and had a lot of features , but I have written those features which challenged the developers the 				most.
+
+			->Filter:
+				Tenants were able to filter the results according to their requirements.
+				Property owners were also able to show their property to only those tenants which fulfilled their criteria.
+
+			->Technology:
+				Technology used for all of the above three products was Laravel.
+				Reasons behind choosing Laravel:
+					->Fast app loading.
+					->Simple Structure.
+					->Powerful features of ROR and symphony are used.
+	
