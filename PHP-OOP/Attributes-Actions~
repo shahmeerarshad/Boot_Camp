@@ -6,6 +6,7 @@ phone 		:int
 email	   	:string
 username	:string
 followers  	:user
+following	:user
 Actions:
 login()
 logout()
@@ -37,6 +38,7 @@ Text	 	:string
 picture	 	:photo
 location 	:string
 Actions:
+get_tweets()	//return all tweets of a user
 add_photo()
 add_location()
 

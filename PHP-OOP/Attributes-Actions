@@ -6,7 +6,7 @@ phone 		:int
 email	   	:string
 username	:string
 followers  	:user
-following	:user
+following	:user	
 Actions:
 login()
 logout()
