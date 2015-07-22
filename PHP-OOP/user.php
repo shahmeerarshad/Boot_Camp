@@ -31,7 +31,7 @@ class user
    $a =fgets($handle);
    if($a==1)
    {
-     echo "signingup";
+  $this-> signup();
    }
    else if ($a==2)
    {
@@ -54,25 +54,40 @@ class user
       echo"Enter Password\n";
       $admin_password=fgets($handle);
       print($admin_password);
-      if($admin_username==="saad")
+
+      if($admin_username!="saad")
       {
-         echo "====== Welcome Admin ======";
+      echo "====== Welcome Admin ======";
       }
       else
       {
-        echo "invalid password";
-      }
-    }
-    fclose($handle); 
+       echo "invalid password";
+   }
+   }
+   fclose($handle); 
   
 }
 function signup()
 {
+ $handle=fopen("php://stdin","r");
  Echo "Enter Full Name";
- Echo "Enter Email";
+$name = fgets($handle);
+$myfile = fopen("$name.txt", "a") or die("Unable to open file!");
+
+fwrite($myfile, $name);
+
+Echo "Enter Email";
+$email=fgets($handle);
+fwrite($myfile,$email);
+
+
  Echo "Password";
+$pass=fgets($handle);
+fwrite($myfile,$pass);
+fclose($myfile);
 
 }
+
 
 }
   $obj=new user();
