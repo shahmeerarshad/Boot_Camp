@@ -1,4 +1,5 @@
 <?php
+include ("tweet.php");
 class user
 {
  var  $user_id;
@@ -11,9 +12,10 @@ class user
  var $password;
  var $a;
  var $b;
+ var $tw;
   public function __construct()
   {
-
+    $tw =new tweet();
     $followers=array();
     $following=array();
     $user_id=1;
@@ -51,17 +53,24 @@ class user
       Echo"Enter Admin Username\n";
       $admin_username=fgets($handle);
       print($admin_username);
-      echo"Enter Password\n";
-      $admin_password=fgets($handle);
-      print($admin_password);
+//      echo"Enter Password\n";
+//      $admin_password=fgets($handle);
+//      print($admin_password);
 
-      if($admin_username!="saad")
+      if(trim($admin_username)=='saad')
       {
       echo "====== Welcome Admin ======";
       }
       else
       {
-       echo "invalid password";
+        echo "invalid username\n";
+        echo "Press 1 to write a tweet\n";
+        $tt=fgets($handle);
+        if ($tt==1)
+        {
+        $tw->post_tweet();
+        }
+
    }
    }
    fclose($handle); 
