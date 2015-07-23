@@ -82,7 +82,7 @@ source $HOME/.aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-function addfiles()
+function addfiles() #this method adds files to github account with passing filename and commit msg to this method
 {
 git add $1
 git commit -m "$2"
