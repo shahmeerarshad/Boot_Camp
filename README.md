@@ -13,6 +13,9 @@ All of the assignments and work related Boot Camp is posted here.
 			->TEAM LEADS MEETING.
 ##Coding Assignmets
 	This folder contains all the coding assingments of HackerRank and LeetCode.
+##PHP-OOP
+	This folder contains the twitter clone code files.
+	In this code i have tried to perform some basic functionality of twitter such as Posting Tweets,SigningIn, Following other users.
 ##VagrantFile_SHELL
 	Contains the VagrantFile and the Shell Scripts being run in vagrant files.
 ##ZshRc_Aliases
