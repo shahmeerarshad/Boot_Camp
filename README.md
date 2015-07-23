@@ -11,6 +11,8 @@ All of the assignments and work related Boot Camp is posted here.
 			->HR-REPORT
 			->COO_Meeting
 			->TEAM LEADS MEETING.
+##Code Academy
+	Snapshots of my code academy performance
 ##Coding Assignmets
 	This folder contains all the coding assingments of HackerRank and LeetCode.
 ##PHP-OOP
