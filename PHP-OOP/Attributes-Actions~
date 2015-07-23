@@ -1,0 +1,76 @@
+User:
+Attributes:
+ID 		:int
+full_name 	:string
+phone 		:int
+email	   	:string
+username	:string
+followers  	:user
+following	:user
+Actions:
+login()
+logout()
+creat_tweet()
+creat_message()
+delete_tweet()
+create_list()
+post_tweet()
+view_profile()
+edit_profile()
+show_list()
+
+Profile:
+Attributes:
+profile_photo	:photo
+header_photo	:photo
+full_name       :string
+bio		:string
+location	:string
+website 	:string
+theme_color	:color
+dob		:date
+Actions:
+Save_profile()
+
+Tweet:
+Attributes
+Text	 	:string
+picture	 	:photo
+location 	:string
+Actions:
+get_tweets()	//return all tweets of a user
+add_photo()
+add_location()
+
+List:
+Attributes:
+user_id
+list_name	:sring
+description	:string
+public		:bool
+private		:bool
+Actions:
+savelist()
+
+Message:
+Attributes:
+ID		:long int
+Text		:string
+date		:date
+to		:user
+Actions:
+send_message()
+
+Photo:
+Attributes:
+id 		:int
+description	:string
+Actions:
+picture()
+
+Color:
+Attributes:
+color		:list
+Actions:
+getcolor()
+

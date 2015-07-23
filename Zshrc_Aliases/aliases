@@ -9,5 +9,9 @@ alias boot="cd Boot_Camp"
 alias sherry="shahmeerarshad"
 alias als="vim ~/.aliases"
 alias mycoeus="cd mycoeus"
+alias vgup="vagrant up"
+alias vrp="vagrant reload --provision"
+alias vrr="vagrant reload"
+alias vfl="vim Vagrantfile"
 
 
