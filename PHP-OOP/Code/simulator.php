@@ -25,12 +25,17 @@ class simulator
   }
 
 
-  public function followUp()
+  public function followUp($verify)
   {  
     $usr=new user;
     $twt=new tweet();
+
+     echo "WELCOME TO YOUR ACCOUNT";
      echo  "\n+=======Press 1 To Show Fellow Tweeters===========\n";
-     Echo "\n+=======Press 2 To post a Tweet===========\n";
+     echo  "\n+=======Press 2 To Post a Tweet===================\n";
+     Echo "\n+========Press 3 To View Your Tweets===============\n";
+     Echo "\n+========Press 3 To View All Tweets===============\n";
+     echo "\n=========Press 4 to Edit your Profile==============\n";
      $handle=fopen("php://stdin","r");
        $a =fgets($handle);
           if($a==1)
@@ -39,9 +44,13 @@ class simulator
                  }
                      elseif($a==2)
                     {
-                           $twt->post_tweet();
+                           $twt->post_tweet($verify);
                          }
-
+			
+			elseif($a==3)
+{
+$twt->getTweets($verify);
+}	
 
 
 
