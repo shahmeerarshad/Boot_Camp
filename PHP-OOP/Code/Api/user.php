@@ -22,92 +22,26 @@ class user
   public function __construct()
   {
   }
-# function startup()
-# {
-#   echo"Not a member?\n Press 1 for singup\n";
-#   Echo"Else press 2 for signin\n"; 
-#   $handle =fopen("php://stdin","r");
-#   $a =fgets($handle);
-#   if($a==1)
-#   {
-#  $this-> signup();
-#   }
-#   else if ($a==2)
-#   {
-#     echo "loging in...";
-#     $this->my_login();
-#   }
-# 
-# }
-   function my_login()
+  function myLogin($a,$b)
   {
+    $obj=new simulator;
     $ojb = new dbHandler;
-    $handle = fopen ("php://stdin","r");
-    Echo "===========Enter Username================\n";
-    $a =trim( fgets($handle));
-    Echo "===========Enter Password===============\n";
-    $b=trim(fgets($handle));
     $verify= $ojb->checkUser($a,$b);
     if($verify)
     {
       echo "WELCOME TO YOUR ACCOUNT" . "  " . "$a";
-      $this->afterLogin();
+      $obj->followUp();
 
     }
     else 
     {
       Echo "Please Re-Enter Your Credentials\n";
-        $this->my_login();
+     $obj->loginInfo(); 
     }
 
-#    if ($a==1)
-#    {
-#      Echo"Enter Admin Username\n";
-#      $admin_username=fgets($handle);
-#      print($admin_username);
-#//      echo"Enter Password\n";
-#//      $admin_password=fgets($handle);
-#//      print($admin_password);
-#
-#      if(trim($admin_username)=='saad')
-#      {
-#      echo "====== Welcome Admin ======";
-#      }
-#      else
-#      {
-#        echo "invalid username\n";
-#        echo "Press 1 to write a tweet\n";
-#        $tt=fgets($handle);
-#        if ($tt==1)
-#        {
-#        $tw->post_tweet();
-#        }
-#
-#   }
-#   }
-   fclose($handle); 
   
   }
   
-  public function afterLogin()
-  {
-    $dbh = new dbHandler;
-    $twt = new tweet;
-    $handle = fopen ("php://stdin","r");
-    Echo "\n+=======Press 1 To Show Fellow Tweeters===========\n";
-    Echo "\n+=======Press 2 To post a Tweet===========\n";
-    Echo "\n+=======Press 1 To post a Show Fellow Tweeters===========\n";
-    $a =fgets($handle);
-    if($a==1)
-    {
-    $this->addFollowers();
-    }
-    elseif($a==2)
-    {
-      $twt->post_tweet();
-    }
-
-  }
   function addFollowers()
   {
   $dbh1=new dbHandler;  
@@ -118,29 +52,22 @@ class user
   $following=array();
   $follow= $dbh1->returnUser($b);
   array_push($following,$follow);
-  Echo "You started Following" . "$follow";
+  Echo "You started Following" . "$follow" . "\n";
+  echo "Press 1 to List the people your are following";
+  $c=fgets($handle);
+  if ($c==1){
+$this->getFollowers($following);
+  }
 
   }
-#function signup()
-#{
-# $handle=fopen("php://stdin","r");
-# Echo "Enter Full Name";
-#$name = fgets($handle);
-#$myfile = fopen("$name.txt", "a") or die("Unable to open file!");
-#
-#fwrite($myfile, $name);
-#
-#Echo "Enter Email";
-#$email=fgets($handle);
-#fwrite($myfile,$email);
-#
-#
-# Echo "Password";
-#$pass=fgets($handle);
-#fwrite($myfile,$pass);
-#fclose($myfile);
-#}
-
+  function getFollowers($follow)
+  {
+    $x=count($follow);
+    for($i=0;$i<$x;$i++)
+    {
+      echo $follow[$i] . "\n";
+    }
+  }
 }
 $bj = new user();
 ?>
