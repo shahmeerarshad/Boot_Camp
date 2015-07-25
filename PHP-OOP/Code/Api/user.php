@@ -51,7 +51,6 @@ class user
 		$dbh1=new dbHandler;  
 		$handle = fopen ("php://stdin","r");
 		$dbh1->allUsers();  
-		echo $global;
 		Echo "========Press the ID Number of the User to Start Following it===========\n";
 		$b =fgets($handle);
 		$following=array();
@@ -76,6 +75,4 @@ class user
 		}
 	}
 }
-$bj = new user();
-echo $bj->global;
 ?>

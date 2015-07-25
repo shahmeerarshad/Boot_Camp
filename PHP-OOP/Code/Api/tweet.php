@@ -1,6 +1,7 @@
 <?php
 include_once "dbhandle.php";
 include_once "simulator.php";
+include_once "photo.php";
 class tweet
 {
 
@@ -8,9 +9,10 @@ class tweet
 	var  $text;
 	var  $photo;
 	var  $location;
-
+	var $pic_array=array();
 	public function post_tweet($verify)
 	{
+		$pic=new photo;
 		$sim = new simulator;
 		$dbh=new dbHandler;
 		$handle =fopen("php://stdin","r");
@@ -20,13 +22,19 @@ class tweet
 		echo "Write Location";
 		$loc=fgets($handle);
 		$location= "Location: " . $loc;
-		echo "Enter Photo";
+		echo "Enter Photo\n";
+		$this->pic_array=$pic->returnPhoto($verify);
+		$size=count($this->pic_array);
+		for($x=0;$x<=$size-1;$x++)
+		{
+			echo $x ." " .  $this->pic_array[$x] . "\n";
+		}
 		$pho=fgets($handle);
-		$photo= "Picture: " . $pho;
+		$photo= "Picture: " . $this->pic_array[1];
 
 
 		$myfile = fopen("$verify", "a") or die("Unable to open file!");
-		fwrite($myfile,$text . $location . $photo );
+		fwrite($myfile,"\n" . $text . $location . $photo . "\n" );
 		Echo "Tweet Posted";
 		$sim->followUp($verify);
 	}
