@@ -38,14 +38,21 @@ class tweet
 		Echo "Tweet Posted";
 		$sim->followUp($verify);
 	}
-	public function getTweets($verify)
+	public function gettweetsAdmin($verify)
+	{
+
+		$file = file_get_contents($verify,FILE_USE_INCLUDE_PATH);
+		echo $file;
+	}
+	public function gettweets($verify)
 	{
 
 		$sim = new simulator;
 		$file = file_get_contents($verify, FILE_USE_INCLUDE_PATH);
 		echo $file;
-		$sim->followUp($verify);
+		$sim->followup($verify);
 	}
+
 }
 
 

@@ -47,7 +47,7 @@ class user
 	}
 
 	function addFollowers()
-	{
+	{	$obj=new simulator;
 		$dbh1=new dbHandler;  
 		$handle = fopen ("php://stdin","r");
 		$dbh1->allUsers();  

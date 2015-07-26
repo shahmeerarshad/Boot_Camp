@@ -5,10 +5,11 @@ include_once "Api/dbhandle.php";
 include_once "Api/profile.php";
 include_once "Api/list.php";
 include_once "Api/message.php";
-
+include_once"Api/admin.php";
 $obj=new simulator();
 Echo "================= Welcome To Twitter ====================\n";
-Echo "================= Press 1 for SignIn ====================\n";
+Echo "================= Press 1 for SignIn  ====================\n";
+Echo "================= Press 2 for SignIn as Admin  ====================\n";
 $handle =fopen("php://stdin","r");
 $a =fgets($handle);
 if($a==1)
@@ -16,6 +17,10 @@ if($a==1)
 	$obj->loginInfo();
 
 
+}
+elseif($a==2)
+{
+$obj->adminLoginInfo();
 }
 class simulator
 {
@@ -100,28 +105,51 @@ class simulator
 		$b=trim(fgets($handle));
 		$usr->myLogin($a,$b);
 	}
-function afterList($list_name,$verify)
-{
-$handle=fopen("php://stdin","r");
-$lst=new tweetList;
-echo"Press 1 to add more People into list\n";
-echo"Press 2 to delete from list\n";
-Echo"Press 3 for Main Menu";
-$input=fgets($handle);
-if( $input==1)
-{
-$lst->addToList($list_name,$verify);
+	public function adminLoginInfo()
+	{
 
-}
-elseif($input==2)
+		$adm=new admin;
+		$handle = fopen ("php://stdin","r");
+		Echo "===========Enter Username================\n";
+		$a =trim( fgets($handle));
+		Echo "===========Enter Password===============\n";
+		$b=trim(fgets($handle));
+		$adm->AdminLogin($a,$b);
+	}
+	public function afterAdminLogin($verify)
 {
-$lst->removeFromList($list_name,$verify);
-}
-elseif($input==2)
-{
-$this->followUp($verify);
-}
-}
+		$db=new dbHandler;
+		$db->allUsers();
+		echo"Enter the User name to see all tweets\n";
+		$twt=new tweet();
+		$handle=fopen("php://stdin","r");
+		$user=fgets($handle);
+		$twt->gettweetsAdmin(trim($user));
+
+	}
+
+	function afterList($list_name,$verify)
+	{
+		$handle=fopen("php://stdin","r");
+		$lst=new tweetList;
+		echo"Press 1 to add more People into list\n";
+		echo"Press 2 to delete from list\n";
+		Echo"Press 3 for Main Menu";
+		$input=fgets($handle);
+		if( $input==1)
+		{
+			$lst->addToList($list_name,$verify);
+
+		}
+		elseif($input==2)
+		{
+			$lst->removeFromList($list_name,$verify);
+		}
+		elseif($input==2)
+		{
+			$this->followUp($verify);
+		}
+	}
 }
 
 ?>

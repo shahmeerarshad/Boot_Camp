@@ -3,10 +3,19 @@ include_once("simulator.php");
 class dbHandler
 {
 	var $users;
+	var $admin;
 	public function __construct()
 	{
 
 		$sim=new simulator;
+
+		$this->admin=array
+			(
+			 1=>array(
+				  "username"=>"admin",
+				 "password"=>"12345")
+			);
+
 		$this->users= array
 			(
 			 "1"=> array
@@ -35,7 +44,7 @@ class dbHandler
 			  "username"=>"salman",
 			  "password"=>"12345"
 			 )
-
+			
 
 			 );
 	}
@@ -74,6 +83,19 @@ class dbHandler
 			} 
 		}
 return 0;
+	}
+
+	function checkAdmin($username,$password)
+	{
+		foreach($this->admin as $value)
+		{	
+			if(trim($value["username"])==trim($username) && trim( $value["password"])==trim($password))
+			{
+				return $value["username"];
+
+			} 
+		}
+
 	}
 
 }

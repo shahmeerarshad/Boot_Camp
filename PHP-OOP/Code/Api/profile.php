@@ -1,6 +1,7 @@
 <?php
 include_once("photo.php");
 include_once("simulator.php");
+include_once("color.php");
 
 class profile
 {
@@ -22,6 +23,7 @@ class profile
 		$sim=new simulator;
 		$handle=fopen("php://stdin","r");
 		$pic=new photo;
+		$clr=new color;
 		echo "Enter Header Picture";
 		$this->temp=$pic->returnPhoto($verify);
 		$size=count($this->temp);
@@ -49,10 +51,16 @@ class profile
 		$website=fgets($handle);
 		Echo"Enter DOB ";
 		$dob=fgets($handle);
-
-
+		echo"Enter Theme Color";
+		$clrs=$clr->returnColors();	
+		for($x=0;$x<=$size-1;$x++)
+		{
+			echo $x ." " .  $clrs[$x] . "\n";
+		}
+		$t=fgets($handle);
+		$theme_color=$clrs[1];
 		$myfile = fopen("$verify" . "profile", "w") or die("Unable to open file!");
-		fwrite($myfile, $photo ."\n". $pPhoto ."\n".$full_name . $bio .$location .$website.$dob  );
+		fwrite($myfile, $photo ."\n". $pPhoto ."\n".$full_name . $bio .$location .$website.$dob.$theme_color  );
 		echo "Profile Made";
 		$sim->followUp($verify);
 

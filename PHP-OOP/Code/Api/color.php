@@ -1,9 +1,11 @@
 <?php
 class color
 {
-  private:
-    $colors=array();
-
+public function returnColors()
+{
+$color=array("red","yello","blue","green","purple");
+return $color;
+}
 
 
 }
