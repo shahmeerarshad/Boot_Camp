@@ -14,8 +14,8 @@ class dbHandler
 			  "id"=>1,
 			  "name"=>"Shahmeer Arshad",
 			  "email"=>"shahmeer@gmail.com",
-			  "username"=>"sherry",
-			  "password"=>12345
+			  "username"=>"shy",
+			  "password"=>"12345"
 			 ),
 
 			 "2"=> array
@@ -23,8 +23,8 @@ class dbHandler
 			  "id"=>2,
 			  "name"=>"Hassan Nawaz",
 			  "email"=>"hassan@gmail.com",
-			  "username"=>"hassan",
-			  "password"=>12345
+			  "username"=>"sherry",
+			  "password"=>"12345"
 			 ),
 
 			 "3"=> array
@@ -33,7 +33,7 @@ class dbHandler
 			  "name"=>"Salman Zafar",
 			  "email"=>"salman@gmail.com",
 			  "username"=>"salman",
-			  "password"=>12345
+			  "password"=>"12345"
 			 )
 
 
@@ -64,18 +64,16 @@ class dbHandler
 	}
 	function checkUser($username,$password)
 	{
-		foreach($this->users as $value)
-		{
-			if($value["username"]==$username && $value["password"]==$password)
+		
+			foreach($this->users as $value)
+		{	
+			if(trim($value["username"])==trim($username) && trim( $value["password"])==trim($password))
 			{
 				return $value["username"];
 
 			} 
-			else 
-			{
-				return 0;
-			}
 		}
+return 0;
 	}
 
 }

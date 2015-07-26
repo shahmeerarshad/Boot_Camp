@@ -4,6 +4,7 @@ include_once "Api/tweet.php";
 include_once "Api/dbhandle.php";
 include_once "Api/profile.php";
 include_once "Api/list.php";
+include_once "Api/message.php";
 
 $obj=new simulator();
 Echo "================= Welcome To Twitter ====================\n";
@@ -41,6 +42,8 @@ class simulator
 		echo "\n=========Press 4 to Edit your Profile==============\n";
 		echo "\n=========Press 5 to View your Profile==============\n";
 		echo "\n=========Press 6 to Create a list==================\n";
+		echo "\n=========Press 7 to Send a Message==================\n";
+		echo "\n=========Press 8 to View Messages==================\n";
 		$handle=fopen("php://stdin","r");
 		$a =fgets($handle);
 		if($a==1)
@@ -74,7 +77,17 @@ class simulator
 			$list_name=fgets($handle);
 			$lst->saveList($verify,$list_name);
 		}
+		elseif($a==7)
+		{
+			$msg=new message;
+			$msg->sendMessage($verify);
 
+		}
+		elseif($a==8)
+		{
+			$msg=new message;
+			$msg->readMessage($verify);
+		}
 	}
 	public function loginInfo()
 	{
