@@ -45,6 +45,11 @@ class dbHandler
 
 			 );
   }
+  function returnTweets($verify)
+  {
+    $file = file_get_contents($verify,FILE_USE_INCLUDE_PATH);
+    return $file;
+  }
   function addUser()
   { 
     $sim=new simulator;
@@ -81,14 +86,9 @@ class dbHandler
 	function allUsers()
 
 	{
-		echo"###############################################################\n";
-
-		foreach($this->users as $values)
-		{
-			echo $values["id"] ." ". $values["username"] . "\n";
-
-		}
+    return $this->users;
   }
+
 	function allUsersF($verify)
 
 	{

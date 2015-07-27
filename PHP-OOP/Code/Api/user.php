@@ -39,45 +39,28 @@ class user
 		}
 		else 
 		{
-			Echo "Please Re-Enter Your Credentials\n";
-			$obj->loginInfo(); 
-		}
+			$obj->wrongLogin(); 
+		
 
 
-	}
+    }
+  }
 
 	function addFollowers($verify)
 	{	$obj=new simulator;
 		$dbh1=new dbHandler;  
-		$handle = fopen ("php://stdin","r");
-		$dbh1->allUsersF($verify);  
-		Echo "========Press the ID Number of the User to Start Following it===========\n";
-		$b =fgets($handle);
+    $obj->returnUsersF($verify); 
+  $follow= $obj->getFollowersInfo(); 
 		$following=array();
-		$follow= $dbh1->returnUser($b);
-		array_push($following,$follow);
-		Echo "You started Following" . "$follow" . "\n";
-		echo "Press 1 to List the people your are following";
-		$c=fgets($handle);
-		if ($c==1)
-		{
-			$this->getFollowers($following,$verify);
-
-		}
+    array_push($following,$follow);
+    $obj->afterFollowing($following,$verify,$follow);
 
 	}
-	function getFollowers($follow,$verify)
-	{
-		$x=count($follow);
-		for($i=0;$i<$x;$i++)
-		{
-			echo $follow[$i] . "\n";
-    }
-    $sim = new simulator;
-    $sim-> followUp($verify);
+	function getFollowers($following,$verify)
+  {
+    return $following;
 
   }
-  function unFollow($verify,$follow)
-  {}
-}
+} 
+
 ?>

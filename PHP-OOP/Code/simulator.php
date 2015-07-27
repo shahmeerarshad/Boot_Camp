@@ -16,7 +16,69 @@ class simulator
 		//  $this->setting();
 
 		$twt= new tweet();
-	}
+  }
+  public function wrongLogin()
+  {
+    Echo "Please Re-Enter Your Credentials\n";
+           $this->loginInfo();
+
+  }
+  function tweetInput($verify)
+  {
+    $pic=new photo;
+    $twt=new tweet;
+    $dbh=new dbHandler;
+    $handle =fopen("php://stdin","r");
+    echo "Write your Tweet\n ";
+    $tweet= fgets($handle);
+    $text= " Tweet: " . $tweet;
+    echo "Write Location";
+    $loc=fgets($handle);
+    $location= "Location: " . $loc;
+    echo "Enter Photo\n";
+    $this->pic_array=$pic->returnPhoto($verify);
+    $size=count($this->pic_array);
+    for($x=0;$x<=$size-1;$x++)
+    {
+      echo $x ." " .  $this->pic_array[$x] . "\n";
+    }
+    $pho=fgets($handle);
+    $photo= "Picture: " . $this->pic_array[1];
+
+$twt->post_tweet($verify,$text,$location,$photo);
+
+
+
+  }
+  public function getFollowersInfo()
+  {   $dbh=new dbHandler;
+      $handle=fopen("php://stdin","r");
+      Echo "========Press the ID Number of the User to Start Following it===========\n";
+      $b =fgets($handle);
+      return $dbh->returnUser($b);
+
+  }
+  public function afterFollowing($following,$verify,$follow)
+  {
+    $usr=new user;
+    $handle=fopen("php://stdin","r");
+    Echo "You started Following"."\t" . "$follow" . "\n";
+    echo "Press 1 to List the people your are following";
+    $c=fgets($handle);
+    if ($c==1)
+    {
+      var_dump($following); 
+     $this-> followUp($verify);
+
+
+    }
+
+  }
+    function showTweets($twts)
+    {
+      echo $twts;
+    }
+
   public function welcome()
   {
 
@@ -71,12 +133,12 @@ elseif($a==3)
 		}
 		elseif($a==2)
 		{
-			$twt->post_tweet($verify);
+			$this->tweetInput($verify);
 		}
 
 		elseif($a==3)
 		{
-			$twt->getTweets($verify);
+			$twt->getTweetsAdmin($verify);
 		}	
 
 		elseif($a==4)
@@ -128,7 +190,27 @@ $this->welcome();
 		Echo "===========Enter Password===============\n";
 		$b=trim(fgets($handle));
 		$usr->myLogin($a,$b);
-	}
+  }   
+ public function returnUsersF($verify)
+  {
+    $dbh=new dbHandler;
+    $users=$dbh->allUsers();
+    foreach($users as $value)
+    {
+      if($value["username"]!=trim($verify)){
+        echo $value["id"] . "\t" . $value["username"]."\n";
+      }
+    }
+  }
+ public function returnUsers()
+  {
+    $dbh=new dbHandler;
+    $users=$dbh->allUsers();
+    foreach($users as $value)
+    {
+        echo $value["id"] . "\t" . $value["username"]."\n";
+    }
+  }
 	public function adminLoginInfo()
 	{
 
@@ -173,7 +255,8 @@ $this->welcome();
 		{
 			$this->followUp($verify);
 		}
-	}
-}
 
+
+  }
+}
 ?>
