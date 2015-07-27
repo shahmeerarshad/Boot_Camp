@@ -46,11 +46,11 @@ class user
 
 	}
 
-	function addFollowers()
+	function addFollowers($verify)
 	{	$obj=new simulator;
 		$dbh1=new dbHandler;  
 		$handle = fopen ("php://stdin","r");
-		$dbh1->allUsers();  
+		$dbh1->allUsersF($verify);  
 		Echo "========Press the ID Number of the User to Start Following it===========\n";
 		$b =fgets($handle);
 		$following=array();
@@ -61,18 +61,23 @@ class user
 		$c=fgets($handle);
 		if ($c==1)
 		{
-			$this->getFollowers($following);
+			$this->getFollowers($following,$verify);
 
 		}
 
 	}
-	function getFollowers($follow)
+	function getFollowers($follow,$verify)
 	{
 		$x=count($follow);
 		for($i=0;$i<$x;$i++)
 		{
 			echo $follow[$i] . "\n";
-		}
-	}
+    }
+    $sim = new simulator;
+    $sim-> followUp($verify);
+
+  }
+  function unFollow($verify,$follow)
+  {}
 }
 ?>

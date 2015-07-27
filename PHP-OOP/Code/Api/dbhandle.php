@@ -21,7 +21,6 @@ class dbHandler
 			 "1"=> array
 			 (
 			  "id"=>1,
-			  "name"=>"Shahmeer Arshad",
 			  "email"=>"shahmeer@gmail.com",
 			  "username"=>"shy",
 			  "password"=>"12345"
@@ -30,7 +29,6 @@ class dbHandler
 			 "2"=> array
 			 (
 			  "id"=>2,
-			  "name"=>"Hassan Nawaz",
 			  "email"=>"hassan@gmail.com",
 			  "username"=>"sherry",
 			  "password"=>"12345"
@@ -39,7 +37,6 @@ class dbHandler
 			 "3"=> array
 			 (
 			  "id"=>3,
-			  "name"=>"Salman Zafar",
 			  "email"=>"salman@gmail.com",
 			  "username"=>"salman",
 			  "password"=>"12345"
@@ -47,7 +44,28 @@ class dbHandler
 			
 
 			 );
-	}
+  }
+  function addUser()
+  { 
+    $sim=new simulator;
+    $handle=fopen("php://stdin","r");
+    echo "Enter Email\n";
+    $email=fgets($handle);
+    echo "Enter Username";
+    $username=fgets($handle);
+    echo "Enter Password";
+    $password=fgets($handle);
+    $id=sizeof($this->users)+1;
+    $newUser= array
+      (
+        "id"=>$id,
+        "email"=>$email,
+        "username"=>$username,
+        "password"=>$password
+      );
+    array_push($this->users,$newUser);
+    $sim->followUp($username);
+  }
 
 	function returnUser($x)
 	{
@@ -70,7 +88,26 @@ class dbHandler
 			echo $values["id"] ." ". $values["username"] . "\n";
 
 		}
-	}
+  }
+	function allUsersF($verify)
+
+	{
+		echo"###############################################################\n";
+
+		foreach($this->users as $values)
+    {
+      if($values["username"]!= trim($verify)){
+			echo $values["id"] ." ". $values["username"] . "\n";
+      }
+		}
+  }
+  function sendTweets($verify,$text,$location,$photo)
+  {
+               $myfile = fopen("$verify", "a") or die("Unable to open file!");
+               fwrite($myfile,"\n" . $text . $location . $photo . "\n" );
+               Echo "Tweet Posted";
+
+  }
 	function checkUser($username,$password)
 	{
 		

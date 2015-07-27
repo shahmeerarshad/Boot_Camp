@@ -32,10 +32,8 @@ class tweet
 		$pho=fgets($handle);
 		$photo= "Picture: " . $this->pic_array[1];
 
-
-		$myfile = fopen("$verify", "a") or die("Unable to open file!");
-		fwrite($myfile,"\n" . $text . $location . $photo . "\n" );
-		Echo "Tweet Posted";
+    $dbh->sendTweets($verify,$text,$location,$photo);
+    $enter=fgets($handle);
 		$sim->followUp($verify);
 	}
 	public function gettweetsAdmin($verify)
@@ -46,10 +44,12 @@ class tweet
 	}
 	public function gettweets($verify)
 	{
+    $handle=fopen("php://stdin","r");
 
 		$sim = new simulator;
 		$file = file_get_contents($verify, FILE_USE_INCLUDE_PATH);
-		echo $file;
+    echo $file;
+    $enter=fgets($handle);
 		$sim->followup($verify);
 	}
 

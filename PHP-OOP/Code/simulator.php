@@ -7,21 +7,7 @@ include_once "Api/list.php";
 include_once "Api/message.php";
 include_once"Api/admin.php";
 $obj=new simulator();
-Echo "================= Welcome To Twitter ====================\n";
-Echo "================= Press 1 for SignIn  ====================\n";
-Echo "================= Press 2 for SignIn as Admin  ====================\n";
-$handle =fopen("php://stdin","r");
-$a =fgets($handle);
-if($a==1)
-{
-	$obj->loginInfo();
-
-
-}
-elseif($a==2)
-{
-$obj->adminLoginInfo();
-}
+$obj->welcome();
 class simulator
 {
 
@@ -31,8 +17,35 @@ class simulator
 
 		$twt= new tweet();
 	}
+  public function welcome()
+  {
+
+Echo "================= Welcome To Twitter ====================\n";
+Echo "================= Press 1 for SignIn  ====================\n";
+Echo "================= Press 2 for SignIn as Admin  ====================\n";
+Echo "================= Press 3 for SignUp  ====================\n";
+$handle =fopen("php://stdin","r");
+$a =fgets($handle);
+if($a==1)
+{
+	$this->loginInfo();
 
 
+}
+elseif($a==2)
+{
+$this->adminLoginInfo();
+}
+elseif($a==3)
+{
+  $this->signUp();
+}
+  }
+  public function signUp()
+  {
+    $db=new dbHandler;
+    $db->addUser("4","dani@gmail.com","daniking","12345");
+  }
 	public function followUp($verify)
 	{  
 		$usr=new user;
@@ -49,11 +62,12 @@ class simulator
 		echo "\n=========Press 6 to Create a list==================\n";
 		echo "\n=========Press 7 to Send a Message==================\n";
 		echo "\n=========Press 8 to View Messages==================\n";
+		echo "\n=========Press L to Logout ========================\n";
 		$handle=fopen("php://stdin","r");
-		$a =fgets($handle);
+		$a =trim(fgets($handle));
 		if($a==1)
 		{
-			$usr->addfollowers();
+			$usr->addfollowers($verify);
 		}
 		elseif($a==2)
 		{
@@ -92,7 +106,17 @@ class simulator
 		{
 			$msg=new message;
 			$msg->readMessage($verify);
-		}
+    }
+    elseif($a=="L")
+    {
+    $output = shell_exec('clear');
+    echo $output;
+$this->welcome();
+    }
+    else
+    {
+      Echo "\n Wrong Input \n";
+    }
 	}
 	public function loginInfo()
 	{

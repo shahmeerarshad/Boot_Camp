@@ -23,7 +23,7 @@ function addToList($list_name,$verify)
 	$sim=new simulator;
 	$handle=fopen("php://stdin","r");
 	Echo"Press 1 to add people in $list_name";
-	$db->allUsers();
+	$db->allUsersF($verify);
 	Echo "========Press the ID Number of the User to Add it to the list===========\n";
 	$b =fgets($handle);
 	$member=$db->returnUser($b);
