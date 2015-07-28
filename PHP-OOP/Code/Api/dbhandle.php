@@ -105,7 +105,6 @@ class dbHandler
   {
                $myfile = fopen("$verify", "a") or die("Unable to open file!");
                fwrite($myfile,"\n" . $text . $location . $photo . "\n" );
-               Echo "Tweet Posted";
 
   }
 	function checkUser($username,$password)

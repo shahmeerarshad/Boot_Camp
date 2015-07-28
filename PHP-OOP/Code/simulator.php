@@ -258,5 +258,9 @@ $this->welcome();
 
 
   }
+  function saveAll($class_obj)
+  {
+
+  }
 }
 ?>
