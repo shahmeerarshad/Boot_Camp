@@ -127,8 +127,9 @@ function features_export_form($form, $form_state, $feature = NULL) {
     '#title' => t('Name'),
     '#description' => t('Example: Image gallery') . ' (' . t('Do not begin name with numbers.') . ')',
     '#type' => 'textfield',
+     '#required'=>TRUE,
     '#default_value' => !empty($feature->info['name']) ? $feature->info['name'] : '',
-    '#element_validate' => array('features_export_form_validate_field'),
+    
   );
 /////////
   $form['info']['module_name'] = array(
@@ -250,7 +251,9 @@ function features_export_form($form, $form_state, $feature = NULL) {
 
   return $form;
 }
-
+function features_validation_error_msg($rule, $params, $element, $form_state) {
+  return t("My custom error message for %field", array("%field" => $element['#title']));
+}
 
 /**
  * Machine name existence callback for the module name.
@@ -824,15 +827,13 @@ function features_export_form_validate_field($element, &$form_state) {
     case 'version':
       preg_match('/^(?P<core>\d+\.x)-(?P<major>\d+)\.(?P<patch>\d+)-?(?P<extra>\w+)?$/', $element['#value'], $matches);
       if (!empty($element['#value']) && !isset($matches['core'], $matches['major'])) {
-      form_error($element, t('Please enter a valid version with core and major version number. Example: @example', array('@example' => '7.x-1.0')));
+        form_error($element, t('Please enter a valid version with core and major version number. Example: @example', array('@example' => '7.x-1.0')));
       };
       break;
-  case'name':
-    if (!preg_match("/^[a-zA-Z]+[a-zA-Z0-9]*$/",$element['#value']))
-    {
-   form_error($element, t('Please enter a valid name'));
-    };
-    break;
+    case 'name':
+     
+ if (!preg_match("/^[a-zA-Z ]*$/",$element['#value'])) {
+        form_error($element, t('Please enter valid name')));
   }
 }
 
@@ -1670,3 +1671,84 @@ function features_val_name($form,&$formstate)
                        }
 }
 /////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Implementation of hook_fapi_validation_rules
+ */
+function features_fapi_validation_rules() {
+  return array(
+    'my_rule' => array(
+      'callback' => 'features_validation_my_rule',
+      'error_msg' => 'Invalid value for %field'
+    ),
+   
+  );
+}
+
+/**
+ * Implementation of hook_fapi_validation_filters
+ */
+function features_fapi_validation_filters() {
+  return array(
+    'filter_name' => array(
+      'callback' => 'features_validation_filter_name',
+    ),
+  );
+}
+
+function 
+features_validation_my_rule($value) {
+  if (preg_match('/^[a-z]+$/', $value)) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+
+ /**
+ * Rule example with params
+ */
+//function mymodule_validation_other_rule($value, $params) {
+ // if ($value != $params[0]) {
+  //  return TRUE;
+ // }
+ // else {
+  //  return FALSE;
+ // }/
+//}
+
+function features_validation_filter_name($value) {
+  return preg_replace('/\d+/', '', $value);
+}
