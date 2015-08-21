@@ -277,4 +277,6 @@ function Coeus_menu_tree__main_menu(&$variables) {
 function Coeus_preprocess_html(&$vars) {
   drupal_add_css('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', array('group' => CSS_THEME, 'type' => 'external'));
    drupal_add_css('http://fonts.googleapis.com/css?family=Lato:400,400italic,700', array('group' => CSS_THEME, 'type' => 'external'));
+   drupal_add_js('https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', 'external');
+   drupal_add_js('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', 'external');
 }
