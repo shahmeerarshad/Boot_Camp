@@ -20,8 +20,10 @@
                 
            <?php
 
-        $block = module_invoke('coeus_content', 'block_view', 'my_block');
-        print render($block['content']);
+        
+       
+         print render($page['content']);
+
 ?>
       
          
