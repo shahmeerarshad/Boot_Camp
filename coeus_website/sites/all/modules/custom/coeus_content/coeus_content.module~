@@ -1,0 +1,12 @@
+<?php
+function coeus_content_block_info() {
+  $blocks = array();
+  $blocks['my_block'] = array(
+    'info' => t('Content Block'),
+  );
+  
+  return $blocks;
+}
+
+
+?>

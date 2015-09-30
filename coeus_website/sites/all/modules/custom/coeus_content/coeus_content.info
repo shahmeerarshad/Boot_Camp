@@ -1,0 +1,11 @@
+name = coeus_content
+description = Block generation for coeus
+package = public-action
+version = VERSION
+core = 7.x
+files[] = coeus_content.module
+
+; Information added by drupal.org packaging script on 2010-03-21
+version = "7.0-alpha3"
+project = "drupal"
+datestamp = "1269192313"

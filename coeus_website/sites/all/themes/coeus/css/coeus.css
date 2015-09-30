@@ -1,0 +1,31 @@
+body {background: white;}
+#page
+{
+	background-color: white;
+}
+#content
+{
+	background-color: yellow;
+}
+.header__site-link
+{
+
+}
+.header__site-link span {
+  display: none;
+}
+	.header__logo
+{
+width: "160";
+height: "49"	
+}
+.header__logo-image
+{
+width: "160";
+height: "49"		
+}
+img
+{
+width: "160";
+height: "49"			
+}

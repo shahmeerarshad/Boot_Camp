@@ -1,0 +1,240 @@
+<?php
+function coeus_content_block_info() {
+  $blocks = array();
+  $blocks['my_block'] = array(
+    'info' => t('My Content Block'),
+    'status'=>1,
+    'region'=>'conent',
+  );
+   $blocks['clients'] = array(
+     'info' => t('Jobs Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+     $blocks['customers'] = array(
+     'info' => t('Customers Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+   $blocks['services'] = array(
+     'info' => t('Services Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+ $blocks['careers'] = array(
+     'info' => t('Careers Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+   $blocks['media_coverage'] = array(
+     'info' => t('Media Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['contact'] = array(
+     'info' => t('Contact Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['contact_image'] = array(
+     'info' => t('Contact Block Image'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['valuable_customers'] = array(
+     'info' => t('Valuable Customers Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+   $blocks['strategy'] = array(
+     'info' => t('Strategy Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['product_dev'] = array(
+     'info' => t('Product Development'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+
+   $blocks['flexi_team'] = array(
+     'info' => t('Flexi Team'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['image'] = array(
+     'info' => t('Services Image'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+    $blocks['final_clients'] = array(
+     'info' => t('Final Client Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+   $blocks['customer_image'] = array(
+     'info' => t('Customer Image Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+   $blocks['our_customer'] = array(
+     'info' => t('Our Customers Block'),
+     'status'=>1,
+     'region'=>'conent',
+   );
+  return $blocks;
+}
+function coeus_content_block_view($delta = '')
+{
+	$block = array();
+
+  switch ($delta) {
+
+    case 'my_block':
+         $variables = array();
+        $block ['content'] = theme('block_template', $variables);
+     break;
+     
+       case 'customers':
+         $block ['content'] = theme('customer_template', $variables);
+       break;
+      case 'clients':
+         $block ['content'] = theme('clients_template', $variables);
+       break; 
+       case 'services':
+         $block ['content'] = theme('sevices_template', $variables);
+       break;
+       case 'careers':
+         $block ['content'] = theme('careers_template', $variables);
+       break;
+       case 'media_coverage':
+         $block ['content'] = theme('media_template', $variables);
+       break;
+       case 'contact':
+         $block ['content'] = theme('contact_template', $variables);
+       break; 
+        case 'valuable_customers':
+         $block ['content'] = theme('valuable_template', $variables);
+       break;
+       case 'strategy':
+         $block ['content'] = theme('strategy_template', $variables);
+       break;
+       case 'product_dev':
+         $block ['content'] = theme('product_template', $variables);
+       break;
+       case 'flexi_team':
+         $block ['content'] = theme('flexi_template', $variables);
+       break;
+       case 'image':
+         $block ['content'] = theme('service_template', $variables);
+       break;
+       case 'final_clients':
+         $block ['content'] = theme('final_clients_template', $variables);
+       break;
+       case 'contact_image':
+         $block ['content'] = theme('contact_image_template', $variables);
+       break;
+       case 'customer_image':
+         $block ['content'] = theme('customer_image_template', $variables);
+       break;
+        case 'our_customer':
+         $block ['content'] = theme('our_customer_template', $variables);
+       break;
+
+}
+return $block;
+}
+
+ function coeus_content_theme()
+ {
+   $theme = array();
+
+  $theme['block_template'] = 
+  array(
+    'template' => 'myblock-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+  $theme['contact_template'] =
+  array(
+'template' =>'contact-template',
+'path'=> drupal_get_path('theme','Coeus') . '/templates',
+);
+  $theme['customer_template'] = array(
+    'template' => 'customer-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['clients_template'] = array(
+    'template' => 'client-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+  ); 
+$theme['sevices_template'] = array( 
+    'template' => 'service-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['careers_template'] = array(
+    'template' => 'career-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['media_template'] = array(
+    'template' => 'media-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['valuable_template'] = array(
+    'template' => 'valuable-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['strategy_template'] = array(
+    'template' => 'strategy-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['product_template'] = array(
+    'template' => 'product-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['flexi_template'] = array(
+    'template' => 'flexi-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['service_template'] = array(
+    'template' => 'image-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['final_clients_template'] = array(
+    'template' => 'final-clients-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['contact_image_template'] = array(
+    'template' => 'contact-image-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['customer_image_template'] = array(
+    'template' => 'customer-image-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+$theme['our_customer_template'] = array(
+    'template' => 'our-customer-template',
+    'path' => drupal_get_path('theme', 'Coeus') . '/templates',
+);
+  return $theme;
+
+ }
+
+ function Coeus_content_form_alter(&$form, &$form_state, $form_id){
+  
+    if ($form_id == 'webform_client_form_87') 
+    {
+
+        $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default';
+    }
+}
+  
+ 
+?>
+
+  
+
+  
+  
+  
+
+  
