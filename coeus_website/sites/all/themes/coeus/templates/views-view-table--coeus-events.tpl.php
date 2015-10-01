@@ -20,13 +20,13 @@
  */
 ?>
 <?php $image_path = base_path() . drupal_get_path('theme', 'Coeus') . '/images'; ?>
- <section>
+ <section class = "events">
       <img src="<?php echo $image_path;?>/events.jpg" />
     </section>
 
  <section class="container no-l-p no-r-p events-section clearfix pt80 pb80">
       <div class="main-heading clearfix">
-          <h2 class="pl20">Upcoming Events</h2>
+          <h2 class="pl20"><?php print t('Upcoming Events');?></h2>
       </div>
 
       <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">

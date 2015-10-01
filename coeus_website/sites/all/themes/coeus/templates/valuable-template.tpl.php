@@ -1,5 +1,5 @@
 <?php $image_path = base_path() . drupal_get_path('theme', 'Coeus') . '/images'; ?>
- <section>
+ <section class="service">
       <img src="<?php echo $image_path;?>/service.jpg" />
     </section>
 <section id="services" class="container clearfix pt80">

@@ -1,6 +1,6 @@
 <section class="container services clearfix">
       <div class="main-heading no-b-border mb10 clearfix">
-          <h2 class="pull-left">Contact</h2>
+          <h2 class="pull-left"><?php print t('CONTACT');?></h2>
       </div>
       <div class="row ">
         

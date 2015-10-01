@@ -1,4 +1,33 @@
 /* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+
+.field-item img
+{
+  min-width: 100%
+}
+.form-type-item
+{
+  display: none;
+}
+.events img 
+{
+  min-width: 100%;
+}
+.contact img 
+{
+  min-width: 100%;
+}
+.customer img 
+{
+  min-width: 100%;
+}
+.service img 
+{
+  min-width: 100%;
+}
+.aboutus img 
+{
+  min-width: 100%;
+}
 .confirmation
 {
 border-bottom: 1px solid #CCC;
@@ -6,12 +35,13 @@ padding: 0px 332px 9px;
 }
 .language-switcher-locale-url{
   position: absolute;
-    right: -12px;
+    right: 87px;
     top: 15px;
 }
 ul.language-switcher-locale-url li {
 
 display: inline;
+margin-left: 12px;
 }
 ul.language-switcher-locale-url li a {
 color :#322f30;
@@ -307,7 +337,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 102, ../sass/variable.scss */
 .pb80 {
-  padding-bottom: 80px;
+  padding-bottom: 0px;
 }
 
 /* line 103, ../sass/variable.scss */
@@ -826,7 +856,7 @@ img {
 
 /* line 446, ../sass/style.scss */
 .container {
-  background: #fdfdfd;
+  background: #ffffff;
   width: 900px;
   margin: 0 auto;
   position: relative;
@@ -973,3 +1003,49 @@ img {
   padding: 10px 30px; 
  border-color: #bbb; 
 }*/
+
+/*---------------[Quick Fixes ]--------------------*/
+.news-box{
+  min-height: 100px;
+}
+
+.reg-form-content{
+  margin-top: 20px;
+}
+.reg-form-content .form-group{
+  margin-bottom: 15px;
+}
+.reg-form-content input[type=submit] .button-primary{
+   
+    border-color: #ccc;
+    color: #333;
+}
+.reg-form-content input[type=submit]{
+  -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin: 10px 0;
+    border-color: #bbb;
+    background-color: #fff;
+}
+.reg-form-content input[type=submit]:hover{
+  border: transparent 1px solid;
+  background: #ffa335;
+  color: #fff;
+}
+
+.reg-form-content #edit-submitted-cover-letter {
+    margin-left: 0px;
+    width: 100%;
+}

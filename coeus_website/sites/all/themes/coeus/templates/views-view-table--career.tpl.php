@@ -22,7 +22,7 @@
 <div class="container-fluid">
    <section class ="container pb80">
       <div class="main-heading clearfix">
-          <h2>Career</h2>
+          <h2><?php print t('Career');?></h2>
       </div>
       <div class="bs-example" data-example-id="simple-carousel">
          <div id="carousel-example-next5" class="carousel slide" data-ride="carousel">

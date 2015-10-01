@@ -26,7 +26,7 @@
 <div class="container-fluid">
    <section class ="container">
       <div class="main-heading clearfix">
-         <h2 class="pull-left">News</h2>
+         <h2 class="pull-left"><?php print t('News');?></h2>
       </div>
       <div class="bs-example" data-example-id="simple-carousel2">
          <div id="carousel-example-generic2" class="carousel slide" data-ride="carousel">
@@ -40,7 +40,7 @@
                      <?php foreach ($rows as $row_count => $row): ?>
                      <?php $i++; ?>
                      <?php if ($row_count < 3 ):?>
-                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 news-box">
                         <h4><?php echo $row['field_heading'] ?></h4>
                         <p><?php echo $row['field_news'] ?></p>
                      </div>
@@ -52,7 +52,7 @@
                   <div class="content row">
                      <?php foreach ($rows as $row_count => $row): ?>
                      <?php if ($row_count > 2  ):?>
-                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 news-box">
                         <h4><?php echo $row['field_heading'] ?></h4>
                         <p><?php echo $row['field_news'] ?></p>
                      </div>

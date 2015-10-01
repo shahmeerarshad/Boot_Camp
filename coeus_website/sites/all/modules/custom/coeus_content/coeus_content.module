@@ -226,6 +226,11 @@ $theme['our_customer_template'] = array(
 
         $form['actions']['submit']['#attributes']['class'][] = 'btn btn-default';
     }
+    if ($form_id == 'webform_client_form_88') 
+    {
+
+       $form['submitted']['resume']['upload_button']['#attributes']['class'][] = 'btn btn-default';
+    }
 }
   
  

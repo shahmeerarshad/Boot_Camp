@@ -1,7 +1,7 @@
 <div class="container-fluid">
       <section class="container">
       <div class="main-heading clearfix">
-          <h2 class="pull-left">Media Coverage</h2>
+          <h2 class="pull-left"><?php print t('Media Coverage');?></h2>
       </div>
         <div class="bs-example" data-example-id="simple-carousel">
           <div id="carousel-example-next" class="carousel slide" data-ride="carousel">

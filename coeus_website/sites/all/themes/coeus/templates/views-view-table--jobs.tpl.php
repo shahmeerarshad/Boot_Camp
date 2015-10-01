@@ -1,6 +1,6 @@
 <section class="container pb80">
       <div class="main-heading clearfix">
-          <h2>Open Positions</h2>
+          <h2><?php print t('Open Positions');?></h2>
           <?php $i=0;?>
       </div>
       <div class="mt20">

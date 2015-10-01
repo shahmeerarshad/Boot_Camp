@@ -10,4 +10,6 @@
       <img class="text1" src="<?php echo $image_path;?>/text1.png" style="bottom: 80px;">
       <img class="text2" src="<?php echo $image_path;?>/text2.png" style="bottom: 40px;">
     </section>
+    
      
+   

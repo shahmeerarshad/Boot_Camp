@@ -20,7 +20,7 @@
  */
 ?>
  <?php $image_path = base_path() . drupal_get_path('theme', 'Coeus') . '/images'; ?>
- <section>
+ <section class="events">
       <img src="<?php echo $image_path;?>/events.jpg" />
     </section>
      <section class="container no-l-p no-r-p events-section clearfix pt80 pb80">
